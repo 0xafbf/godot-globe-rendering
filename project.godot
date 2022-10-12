@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node",
+"class": &"Geo",
+"language": &"GDScript",
+"path": "res://globeworks/scripts/Geo.gd"
+}, {
+"base": "MeshInstance3D",
+"class": &"MapTileMesh",
+"language": &"GDScript",
+"path": "res://globeworks/scripts/MapTileMesh.gd"
+}, {
+"base": "HTTPRequest",
+"class": &"MapTileRequest",
+"language": &"GDScript",
+"path": "res://globeworks/scripts/MapTileRequest.gd"
+}]
+_global_script_class_icons={
+"Geo": "",
+"MapTileMesh": "",
+"MapTileRequest": ""
+}
+
+[application]
+
+config/name="globeworks"
+run/main_scene="res://globeworks/scenes/origin.tscn"
+config/features=PackedStringArray("4.0")
+config/icon="res://icon.png"
+
+[global]
+
+layers=false
+
+[layer_names]
+
+3d_physics/layer_1="a"
+3d_physics/layer_2="b"
+3d_physics/layer_3="c"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

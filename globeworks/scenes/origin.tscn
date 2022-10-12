@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://oiwpko1u3k53"]
+
+[ext_resource type="Script" path="res://globeworks/scripts/Player.gd" id="2"]
+[ext_resource type="Script" path="res://globeworks/scripts/Globe.gd" id="3"]
+
+[sub_resource type="BoxMesh" id="8"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxMesh" id="9"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="origin" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.764382, -0.400485, 0.505305, 0, 0.783704, 0.621134, -0.644764, -0.474783, 0.599049, 13.472, 15.6738, 15.8426)
+current = true
+fov = 68.9677
+near = 10.0
+far = 1e+08
+
+[node name="Player" type="Node3D" parent="."]
+script = ExtResource("2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("8")
+skeleton = NodePath("../Camera3D")
+
+[node name="Globe" type="Node3D" parent="."]
+script = ExtResource("3")
+steps_lat = 32
+steps_lon = 64
+
+[node name="Marker" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.878816, 6.37782, 0)
+mesh = SubResource("9")
+
+[node name="Cursor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.878816, 6.37782, 0)
+mesh = SubResource("9")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 295.0
+offset_bottom = 210.0
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_right = 177.0
+offset_bottom = 93.0
+color = Color(0, 0, 0, 1)
+
+[node name="LatitudeLabel" type="Label" parent="UI/ColorRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 94.0
+offset_bottom = 45.0
+pivot_offset = Vector2(13, 12)
+text = "Latitude"
+
+[node name="LatitudeSpinner" type="SpinBox" parent="UI/ColorRect"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 11.0
+offset_right = 174.0
+offset_bottom = 35.0
+pivot_offset = Vector2(-75, 15)
+min_value = -90.0
+max_value = 90.0
+step = 0.01
+
+[node name="LongitudeLabel" type="Label" parent="UI/ColorRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 48.0
+offset_right = 94.0
+offset_bottom = 79.0
+pivot_offset = Vector2(13, 12)
+text = "Longitude
+"
+
+[node name="LongitudeSpinner" type="SpinBox" parent="UI/ColorRect"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 45.0
+offset_right = 174.0
+offset_bottom = 69.0
+pivot_offset = Vector2(-75, 15)
+min_value = -360.0
+max_value = 360.0
+step = 0.01
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.850398, -5.19782e-08, -0.52614, 0.523563, -0.0988509, 0.846233, -0.0520094, -0.995102, -0.0840626, 0, 10.5738, 0)
+
+[connection signal="value_changed" from="UI/ColorRect/LatitudeSpinner" to="Player" method="_on_LatitudeSpinner_value_changed"]
+[connection signal="value_changed" from="UI/ColorRect/LongitudeSpinner" to="Player" method="_on_LongitudeSpinner_value_changed"]
