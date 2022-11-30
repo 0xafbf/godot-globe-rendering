@@ -21,7 +21,7 @@ var marker_lonlat: Vector2 = Vector2(-74.08175, 4.60972) * TAU / 360
 @export var cam_zoom_speed: float = 1.04
 
 
-const Globe = preload("Globe.gd")
+const Globe = preload("globe.gd")
 @onready var globe: Globe = $"../Globe"
 @onready var cam: Camera3D = $"../Camera3D"
 @onready var cursor: Node3D = $"../Cursor"
