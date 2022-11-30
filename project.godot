@@ -12,17 +12,17 @@ _global_script_classes=[{
 "base": "Node",
 "class": &"Geo",
 "language": &"GDScript",
-"path": "res://globeworks/scripts/Geo.gd"
+"path": "res://addons/globe-rendering/scripts/Geo.gd"
 }, {
 "base": "MeshInstance3D",
 "class": &"MapTileMesh",
 "language": &"GDScript",
-"path": "res://globeworks/scripts/MapTileMesh.gd"
+"path": "res://addons/globe-rendering/scripts/MapTileMesh.gd"
 }, {
 "base": "HTTPRequest",
 "class": &"MapTileRequest",
 "language": &"GDScript",
-"path": "res://globeworks/scripts/MapTileRequest.gd"
+"path": "res://addons/globe-rendering/scripts/MapTileRequest.gd"
 }]
 _global_script_class_icons={
 "Geo": "",
@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="globeworks"
-run/main_scene="res://globeworks/scenes/origin.tscn"
+run/main_scene="res://addons/globe-rendering/scenes/demo_scene.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 

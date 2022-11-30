@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://oiwpko1u3k53"]
+[gd_scene load_steps=5 format=3 uid="uid://dqaae5hyvvbka"]
 
-[ext_resource type="Script" path="res://globeworks/scripts/Player.gd" id="2"]
-[ext_resource type="Script" path="res://globeworks/scripts/Globe.gd" id="3"]
+[ext_resource type="Script" path="res://addons/globe-rendering/scripts/Player.gd" id="1_ormgi"]
+[ext_resource type="Script" path="res://addons/globe-rendering/scripts/Globe.gd" id="2_ugiku"]
 
 [sub_resource type="BoxMesh" id="8"]
 size = Vector3(0.3, 0.3, 0.3)
@@ -19,7 +19,7 @@ near = 10.0
 far = 1e+08
 
 [node name="Player" type="Node3D" parent="."]
-script = ExtResource("2")
+script = ExtResource("1_ormgi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
@@ -27,7 +27,7 @@ mesh = SubResource("8")
 skeleton = NodePath("../Camera3D")
 
 [node name="Globe" type="Node3D" parent="."]
-script = ExtResource("3")
+script = ExtResource("2_ugiku")
 steps_lat = 32
 steps_lon = 64
 

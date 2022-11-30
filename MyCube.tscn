@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[sub_resource type="BoxMesh" id=1]
-
-[node name="MeshInstance65" type="MeshInstance3D"]
-transform = Transform3D( 0.967864, 0.251475, 0, -0.251475, 0.967864, 0, 0, 0, 1, 4.11782, 0.46399, 9.53674e-07 )
-mesh = SubResource( 1 )
-skeleton = NodePath("../Globe")
