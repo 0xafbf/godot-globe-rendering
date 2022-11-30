@@ -12,17 +12,17 @@ _global_script_classes=[{
 "base": "Node",
 "class": &"Geo",
 "language": &"GDScript",
-"path": "res://addons/globe-rendering/scripts/Geo.gd"
+"path": "res://addons/globe-rendering/scripts/geo.gd"
 }, {
 "base": "MeshInstance3D",
 "class": &"MapTileMesh",
 "language": &"GDScript",
-"path": "res://addons/globe-rendering/scripts/MapTileMesh.gd"
+"path": "res://addons/globe-rendering/scripts/map_tile_mesh.gd"
 }, {
 "base": "HTTPRequest",
 "class": &"MapTileRequest",
 "language": &"GDScript",
-"path": "res://addons/globe-rendering/scripts/MapTileRequest.gd"
+"path": "res://addons/globe-rendering/scripts/map_tile_request.gd"
 }]
 _global_script_class_icons={
 "Geo": "",
